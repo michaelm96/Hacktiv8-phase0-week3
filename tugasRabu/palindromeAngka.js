@@ -1,18 +1,16 @@
-function palindrome(kata) {
-    var balik=''
-    for (var i = kata.length -1; i >= 0; i--){
-        balik += kata[i];
-    }
-    if(kata === balik){
-        return true
-    }else {
-        return false
+function angkaPalindrome(num) {
+    var numStr = num.toString();
+    for(var i = 0; i < numStr.length; i++){
+        if(numStr[i] === numStr[numStr.length - 1]){
+            var toNum = parseInt(numStr);
+            console.log(typeof numStr);
+        }
     }
   }
   
   // TEST CASES
-  console.log(palindrome('katak')); // true
-  console.log(palindrome('blanket')); // false
-  console.log(palindrome('civic')); // true
-  console.log(palindrome('kasur rusak')); // true
-  console.log(palindrome('mister')); // false
+  console.log(angkaPalindrome(8)); // 9
+  console.log(angkaPalindrome(10)); // 11
+  console.log(angkaPalindrome(117)); // 121
+  console.log(angkaPalindrome(175)); // 181
+  console.log(angkaPalindrome(1000)); // 1001
