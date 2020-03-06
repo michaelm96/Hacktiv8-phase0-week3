@@ -5,7 +5,7 @@ function tentukanDeretAritmatika(arr) {
         }else{
             return false
         }
-  }
+    }
 }  
   // TEST CASES
   console.log(tentukanDeretAritmatika([1, 2, 3, 4, 5, 6])); // true
