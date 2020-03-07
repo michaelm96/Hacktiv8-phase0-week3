@@ -47,7 +47,6 @@ function dataHandling2(args2){
 		    console.log('Desember');
 		break;
     }
-    // bulan.sort(function(value1, value2) { return value1 > value2 });
     bulan3 = bulan.sort(function(a,b){
         return b-a
     });
