@@ -1,34 +1,47 @@
 function targetTerdekat(arr) {
     var arrO = 0
     var arrX = []
-    for(var i = 0; i<arr.length; i++){
-        if(arr[i]==="o"){
-            arrO = i
-        } else if(arr[i]==="x"){
-            arrX.push(i)
+    var dif = []
+    var res
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === "o") {
+            arrO += i;
+        } else if (arr[i] === "x") {
+            arrX.push(i);
         }
     }
-
-    if (arrX.length === 0) return 0;
-
-    var hasil = arrX[0];
-    for (var k = 0; k < arrX.length; k++){
-        if (arrX[k] > 0) hasil = arrX[k];
-    }
-
-    for (var j=0; j<arrX.length; j++){
-        if(arrO > arrX[j]){
-            var temp = arrO - arrX[j];
-        }else if(arrO < arrX[j]){
-            var temp = arrX[j] - arrO;
-        }
-        if (hasil > temp){
-            hasil = temp;
-        } else if (hasil == 0) {
-            return temp - hasil;
+    for (var j = 0; j < arrX.length; j++) {
+        if (arrO < arrX[j]) {
+            dif.push(arrX[j] - arrO);
+        } else if (arrO > arrX[j]) {
+            dif.push(arrO - arrX[j]);
         }
     }
-    return hasil;
+    // var min = Infinity;
+    // for (var k = 0; k < dif.length; k++) {
+    //     if (dif[k] < min) {
+    //         min = dif[k]
+    //     }
+    // }
+    // res = min;
+    // if (arrX.length == 0) {
+    //     return 0
+    // }
+    // return res
+
+    for(var k = 0; k<dif.length;k++){
+        for(var l =0;l<dif.length;l++){
+            if(dif[l] > dif[l+1]){
+                var temp = dif[l]
+                dif[l] = dif[l+1]
+                dif[l+1] = temp
+            }
+        }
+    }
+    if(arrX.length == 0){
+        return 0
+    }
+    return dif[0]
   }
   
   // TEST CASES
