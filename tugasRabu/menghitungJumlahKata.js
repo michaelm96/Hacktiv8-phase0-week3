@@ -1,7 +1,7 @@
 function hitungJumlahKata(kalimat) {
     var counter = 0
     for (var i = 0; i < kalimat.length; i++) {
-        if(kalimat[i] == " " || i == kalimat.length -1){
+        if(kalimat[i] == " " && kalimat[i+1] != " " || i == kalimat.length -1){
             counter++
         }
     }
