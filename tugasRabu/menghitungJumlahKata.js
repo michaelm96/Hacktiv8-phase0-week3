@@ -1,13 +1,11 @@
 function hitungJumlahKata(kalimat) {
-    var kataCounter = 0;
-    for (var i = 0; i <= kalimat.length; i++){
-        if(kalimat[i] === kalimat[kalimat.length]){
-            kataCounter++
-        } else if (kalimat[i] === " "){
-            kataCounter++
+    var counter = 0
+    for (var i = 0; i < kalimat.length; i++) {
+        if(kalimat[i] == " " || i == kalimat.length -1){
+            counter++
         }
     }
-    return kataCounter;
+    return counter;
   }
   
   // TEST CASES
